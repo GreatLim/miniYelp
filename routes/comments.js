@@ -18,7 +18,7 @@ router.get("/new", middleware.isLoggedIn, function (req, res) {
 });
 
 
-router.post("/", middleware.checkCommentOwnership, function(req, res){
+router.post("/", middleware.isLoggedIn, function(req, res){
     //lookup campground using ID
     Campground.findById(req.params.id, function(err, campground){
         if(err){
@@ -46,7 +46,6 @@ router.post("/", middleware.checkCommentOwnership, function(req, res){
  router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, res) {
      Comment.findById(req.params.comment_id, function(err, comment) {
          if (err) {
-             console.log(comment);
              res.redirect("back");
          } else {
             res.render("comments/edit", {comment: comment, campground_id: req.params.id})
