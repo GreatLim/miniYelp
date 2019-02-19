@@ -15,7 +15,7 @@ var indexRoutes = require("./routes/index")
 var seedDB = require("./seeds")
 // seedDB();
 
-mongoose.connect("mongodb+srv://greatlim:qq789789@cluster0-kbrnw.mongodb.net/yelp_camp?retryWrites=true", {
+mongoose.connect("mongodb+srv://greatlim:miniyelp@cluster0-kbrnw.mongodb.net/yelp_camp?retryWrites=true", {
     useNewUrlParser: true
 });
 app.use(bodyPaser.urlencoded({
@@ -49,7 +49,7 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/", indexRoutes);
 
 
-app.listen(process.env.PORT, process.env.IP, function () {
+app.listen(process.env.PORT || 3000, process.env.IP, function () {
     console.log("the YelpCamp server has started!");
 });
 
