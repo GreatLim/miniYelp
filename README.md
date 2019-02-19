@@ -1,6 +1,6 @@
 # miniYelp
 ## Demo
-https://miniyelp.herokuapp.com/campgrounds
+https://miniyelp.herokuapp.com/
 ## Todo
 - CSS3 background animation on landing page 
 
