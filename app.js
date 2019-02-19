@@ -15,7 +15,7 @@ var indexRoutes = require("./routes/index")
 var seedDB = require("./seeds")
 // seedDB();
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", {
+mongoose.connect("mongodb+srv://greatlim:qq789789@cluster0-kbrnw.mongodb.net/yelp_camp?retryWrites=true", {
     useNewUrlParser: true
 });
 app.use(bodyPaser.urlencoded({
